@@ -22,14 +22,14 @@
             <div class="col s12 m12 l6 item">
                 <div class="left-column" >
                     <h5>Register as an IAM user</h5>
-                    <form>
+                    <form id="registration-form">
                         <div class="full-field">
                             <label for="email">IAM user name</label>
                             <div class="input-field">
                                 <input id="email" type="email" class="validate" required>
                             </div>
 
-                            <div class="error">
+                            <div id="error-email" class="error">
                                 Error
                             </div>
                         </div>
@@ -40,7 +40,7 @@
                                 <input id="password" type="password" class="validate" required>
                             </div>
 
-                            <div class="error">
+                            <div id="error-password" class="error">
                                 Error
                             </div>
                         </div>

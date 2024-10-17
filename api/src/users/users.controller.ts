@@ -13,7 +13,6 @@ export class UsersController {
 
   @Post()
   register(@Body() request: CreateUserRequest) {
-    console.log(request, 'qwEQWE');
     return this.usersService.createUser(request);
   }
 }

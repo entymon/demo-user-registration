@@ -10,7 +10,7 @@ export class UsersService {
 
   async createUser(
     data: CreateUserRequest,
-  ): Promise<Pick<UserDocument, 'email' | 'name'>> {
+  ): Promise<Pick<UserDocument, 'email'>> {
     const exist = await this.getUserByEmail(data.email);
     if (exist) {
       throw new UnprocessableEntityException(
@@ -20,14 +20,12 @@ export class UsersService {
 
     const password = this.simpleHash(data.password);
     const newUser = new this.userModel({
-      name: data.name,
       email: data.email,
       password,
     });
     const user = await newUser.save();
     return {
       email: user.email,
-      name: user.name,
     };
   }
 

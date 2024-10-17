@@ -48,9 +48,20 @@ h4 {
   color: #fff;
 }
 
+/* .error {
+  color: red;
+} */
+
+/* Hide error messages by default */
 .error {
+  display: none;
   color: red;
   font-size: 12px;
+}
+
+/* Show error messages when the show class is added */
+.error.show {
+  display: block;
 }
 
 .item {
