@@ -6,6 +6,8 @@ import { CreateUserRequest } from './dto/create-user.request';
 
 @Injectable()
 export class UsersService {
+  private readonly hashKey: string = process.env.SECRET_KEY || 'hashKey';
+
   constructor(@InjectModel(User.name) private userModel: Model<UserDocument>) {}
 
   async createUser(
@@ -35,8 +37,9 @@ export class UsersService {
 
   private simpleHash(password: string): string {
     let hash = 0;
-    for (let i = 0; i < password.length; i++) {
-      const char = password.charCodeAt(i);
+    const combined = password + this.hashKey;
+    for (let i = 0; i < combined.length; i++) {
+      const char = combined.charCodeAt(i);
       hash = (hash << 5) - hash + char;
       hash |= 0; // Convert to 32bit integer
     }
