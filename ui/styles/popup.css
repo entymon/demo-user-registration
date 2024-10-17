@@ -1,0 +1,16 @@
+/* Popup styles */
+.popup {
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 20px;
+  background-color: red;
+  color: white;
+  border-radius: 0px;
+  z-index: 1000;
+}
+
+.popup.show {
+  display: block;
+}

@@ -9,6 +9,7 @@ COPY ../../api/package.json .
 RUN npm install
 
 COPY ../../api/ .
+COPY ../../api/.env.example .env
 
 # RUN npm run build
 

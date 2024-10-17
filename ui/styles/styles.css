@@ -22,8 +22,6 @@ h4 {
 }
 
 
-
-
 .info-section {
   background-color: #fff;
   padding: 20px;
@@ -47,10 +45,6 @@ h4 {
   text-decoration: underline;
   color: #fff;
 }
-
-/* .error {
-  color: red;
-} */
 
 /* Hide error messages by default */
 .error {
@@ -123,7 +117,7 @@ input[type="password"] {
 
 /* Custom styles for invalid input fields */
 .input-field input.invalid {
-  border: 1px solid red;
+  border: 1px solid red !important;
   box-shadow: none; 
 }
 
